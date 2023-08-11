@@ -280,15 +280,6 @@ function App() {
           >
             <Sphere scale={2} position={[0,-.5,0]} />
           </Float>
-
-          <Float
-            speed={2} // Animation speed, defaults to 1
-            rotationIntensity={2} // XYZ rotation intensity, defaults to 1
-            floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-            floatingRange={[1, 1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
-          >
-            <Sphere scale={0.2} position={[-3,-25.5,6]} />
-          </Float>
         </Scroll>
 
         <Scroll html style={{width: '100%'}}>
@@ -351,7 +342,10 @@ function App() {
                         <a href={serviceList.find(service => service.id === selectedService)?.url} className='hero-call-to-action service-learn-more'>Learn More<FaArrowRight style={{ marginLeft: '5px' }} /></a>
                       </>
                     ) : (
-                      <p>{serviceList.find(service => service.name === 'UX/UI')?.description}</p>
+                      <>
+                        <p>{serviceList.find(service => service.name === 'UX/UI')?.description}</p>
+                        <a href="/UxUi" className='hero-call-to-action service-learn-more'>Learn More<FaArrowRight style={{ marginLeft: '5px' }} /></a>
+                      </>
                     )}
                   </div>
                 </div>

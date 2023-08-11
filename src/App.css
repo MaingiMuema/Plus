@@ -27,7 +27,7 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    height: 286%;
+    height: 305%;
     color: white;
     background: #000;
     scrollbar-width: thin;
@@ -41,7 +41,7 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    height: 278%;
+    height: 291%;
     color: white;
     background: #000;
     scrollbar-width: thin;
@@ -55,7 +55,7 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    height: 264%;
+    height: 276%;
     color: white;
     background: #000;
     scrollbar-width: thin;
@@ -69,7 +69,7 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    height: 255%;
+    height: 270%;
     color: white;
     background: #000;
     scrollbar-width: thin;
@@ -83,7 +83,7 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    height: 215%;
+    height: 265%;
     color: white;
     background: #000;
     scrollbar-width: thin;
@@ -92,12 +92,26 @@ body{
   }
 }
 
-@media (min-width: 991px) and (max-width: 1400px) {
+@media (min-width: 991px) and (max-width: 1200px) {
   html body{
     top: 0;
     left: 0;
     width: 100%;
-    height: 158%;
+    height: 179%;
+    color: white;
+    background: #000;
+    scrollbar-width: thin;
+    scrollbar-color: #e01265 black;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1600px) {
+  html body{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 163%;
     color: white;
     background: #000;
     scrollbar-width: thin;
