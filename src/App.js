@@ -5,10 +5,8 @@ import { ScrollControls, Scroll, Environment, Float } from '@react-three/drei';
 import { Cosmos } from './models/Cosmos';
 import { Sphere } from './models/Sphere';
 import { Bloom, DepthOfField, EffectComposer, Vignette } from '@react-three/postprocessing';
-import * as THREE from 'three';
 import { React, useEffect, useState, useRef } from 'react';
-import SecondAnime from './models/SecondAnime';
-import { FaBullseye, FaPalette, FaCode, FaCube, FaPaintBrush, FaArrowRight, FaFacebook, FaTwitter, FaDribbble, FaLinkedin } from 'react-icons/fa';
+import { FaBullseye, FaPalette, FaCode, FaCube, FaPaintBrush, FaArrowRight, FaFacebook, FaTwitter, FaDribbble, FaLinkedin, FaPhone, FaEnvelopeOpenText, FaMapMarkedAlt } from 'react-icons/fa';
 import { TweenLite, Circ, gsap } from 'gsap';
 
 //Images
@@ -386,7 +384,8 @@ function App() {
             <div className='row d-flex justify-content-center' style={{padding: "70px 70px 20px 70px", width: "100%"}}>
               <div className='col-lg-4 value-col'>
                   <h3 className='text-center' style={{color: "#E01265", fontWeight: "600"}}>Intergrity</h3>
-                  <p className='text-center'>
+                  <br/>
+                  <p className='text-center' style={{fontFamily: "Oswald, sans-serif"}}>
                   we offer an effective approach to your online presence and brand. 
                   we take it as our own, that’s why we are deliberately in delivering
                   what we promise to offer.
@@ -394,13 +393,15 @@ function App() {
               </div>
               <div className='col-lg-4 value-col'>
                   <h3 className='text-center' style={{color: "#E01265", fontWeight: "600"}}>Data-driven</h3>
-                  <p className='text-center'>
+                  <br/>
+                  <p className='text-center' style={{fontFamily: "Oswald, sans-serif"}}>
                   we are passionate in providing solutions to our customers through our creative innovation.
                   </p>
               </div>
               <div className='col-lg-4 value-col'>
                   <h3 className='text-center' style={{color: "#E01265", fontWeight: "600"}}>Passion</h3>
-                  <p className='text-center'>
+                  <br/>
+                  <p className='text-center' style={{fontFamily: "Oswald, sans-serif"}}>
                   we offer an effective approach to your online presence and brand. 
                   we take it as our own, that’s why we are deliberately in delivering
                   what we promise to offer.
@@ -474,27 +475,53 @@ function App() {
           <div id="large-header" class="large-header">
             <canvas id="demo-canvas"></canvas>
           </div>
-          <div className='container d-flex justify-content-center'>
-            <form className='contact-form'>
-              <h1 class="main-title">Contact <span class="thin">Us</span></h1>
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name='name' placeholder="Enter Name"/>
+          <div id='contact-form' className='container'>
+            <div className='row'>
+              <div className='col-lg-8'>
+                <form className='contact-form'>
+                  <h1 class="main-title">Get In Touch</h1>
+                  <br/>
+                  <br/>
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name='name' placeholder="Enter Name"/>
+                  </div>
+                  <br/>
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name='email' aria-describedby="emailHelp" placeholder="Enter email"/>
+                  </div>
+                  <br/>
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea type="text" class="form-control" id="message" placeholder="Type here..."/>
+                  </div>
+                  <br/>
+                  <br/>
+                  <button type="submit" style={{width: "100%"}} class="contact-btn">Submit</button>
+                </form>
               </div>
-              <br/>
-              <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" name='email' aria-describedby="emailHelp" placeholder="Enter email"/>
+              <div className='col-lg-4 contact-info-container' style={{position: "relative", zIndex: "6", fontFamily: "Oswald, sans-serif"}}>
+                <div class="contact_info_sec">
+                  <div class="d-flex info_single align-items-center">
+                      <FaPhone style={{width: "28px", height: "28px"}}/>&nbsp;&nbsp;&nbsp;
+                      <span>+254 112246573</span>
+                  </div>
+                  <br/>
+                  <br/>
+                  <div class="d-flex info_single align-items-center">
+                      <FaEnvelopeOpenText style={{width: "28px", height: "28px"}}/> &nbsp;&nbsp;&nbsp;
+                      <span>info@plusagency.com</span>
+                  </div>
+                  <br/>
+                  <br/>
+                  <div class="d-flex info_single align-items-center">
+                      <FaMapMarkedAlt style={{width: "36px", height: "36px"}}/>&nbsp;&nbsp;&nbsp;
+                      <span>Buruburu Business arcade, Nairobi</span>
+                  </div>
+                </div>
               </div>
-              <br/>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea type="text" class="form-control" id="message" placeholder="Type here..."/>
-              </div>
-              <br/>
-              <br/>
-              <button type="submit" style={{width: "100%"}} class="contact-btn">Submit</button>
-            </form>
+            </div>
           </div>
 
           <div className='footer' style={{fontFamily: "Roboto", paddingTop: "60px", paddingBottom: "60px", marginTop: "10%", height: "100%"}}>
