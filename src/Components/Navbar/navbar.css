@@ -1,0 +1,39 @@
+.navbar-btn{
+    position: absolute;
+    right: 20px;
+}
+
+div .navbar{
+    padding: 20px;
+    font-weight: 600;
+}
+
+.navbar-brand{
+    margin-left: 20px;
+}
+
+.nav-links{
+    width: 90%;
+}
+
+.nav-link{
+    margin: 0px 40px 0px 40px;
+    color: #fff;
+}
+
+.nav-item a{
+    color: #fff;
+}
+
+.nav-item a:hover{
+    margin: 0px 40px 0px 40px;
+    color: #E01265;
+}
+
+@media screen and (max-width: 400px) {
+    div .navbar-btn{
+        position: relative;
+        right: 00px;
+    }
+      
+}
