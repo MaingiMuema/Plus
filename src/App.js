@@ -13,8 +13,54 @@ import { TweenLite, Circ, gsap } from 'gsap';
 
 //Images
 import Image1 from "./Assets/img1.png";
+import Development from "./Assets/Development.png";
+import Marketing from "./Assets/digitalmarketing.png";
+import Illustration from "./Assets/illustration.png";
+import Video from "./Assets/video.png";
+import Uxui from "./Assets/uxui.png"; 
+import GraphicDesign from "./Assets/graphic.png";
+import SEO from "./Assets/SEO.png";
+import Consultation from "./Assets/Consultation.png";
 
 function App() {
+
+  const [selectedService, setSelectedService] = useState(null);
+
+  const serviceList = [
+    { id: 1, name: 'Digital Marketing', url: '/DigitalMarketing', heading: 'Digital Marketing', image:Marketing, description: 'Our Digital Marketing services are designed to enhance your online presence and drive customer engagement. We create tailored strategies for SEO, social media marketing, content creation, and more to help your business reach its full potential in the digital landscape.' },
+    { id: 2, name: 'UX/UI', url: '/UxUi', heading: 'UX/UI', image: Uxui, description: 'Our UX/UI Design team crafts seamless user experiences and captivating interfaces. We ensure that your digital products are user-friendly, visually appealing, and optimized for maximum engagement. Let us help you create products that users will love.' },
+    { id: 3, name: 'Development', url: '/Development', heading: 'Development',  image: Development, description: 'From static websites to complex web applications, our Web Development team has you covered. We use the latest technologies to build responsive, scalable, and efficient solutions that meet your business needs and provide an exceptional online experience.' },
+    { id: 4, name: 'Video/Photo Editing', url: '/VideoAndPhotoEditing', heading: 'Video/Photo Editing',  image: Video, description: 'Our Video/Photo Editing services transform your raw footage and images into stunning visuals. Whether it\'s for promotional videos, social media content, or visual storytelling, we enhance and edit your media to deliver a polished and professional end result.' },
+    { id: 5, name: 'Animation/Illustration', url: '/Illustration', heading: 'Animation/Illustration',  image: Illustration, description: 'Add a touch of creativity and uniqueness to your brand with our Animation and Illustration services. We bring your ideas to life through captivating animations and custom illustrations that resonate with your target audience and convey your brand\'s message.' },
+    { id: 6, name: 'SEO', url: '/seo', heading: 'Search Engine Optimization',  image: SEO, description: 'Increase your online visibility and attract more organic traffic with our Search Engine Optimization (SEO) services. Our experts analyze your website, identify targeted keywords, and implement strategies to improve your search engine rankings. By optimizing on-page content, building quality backlinks, and enhancing technical aspects, we ensure that your website stands out in search results and reaches a wider audience.' },
+    { id: 7, name: 'Graphic Design', url: '/GraphicDesign', heading: 'Graphic Design',  image: GraphicDesign, description: 'Elevate your brand\'s visual identity with our professional Graphic Design services. Our talented designers create stunning visuals that communicate your brand\'s message effectively. Whether it\'s designing eye-catching logos, engaging marketing materials, or impactful social media graphics, we combine creativity with strategic thinking to deliver designs that leave a lasting impression on your audience.' },
+    { id: 8, name: 'Consultation/Training', url: '/Consultation', heading: 'Consultation/Training',  image: Consultation, description: 'Gain insights and expertise through our Consultation/Training services. Whether you\'re seeking guidance on digital strategies, user experience improvement, or technology implementation, our experienced consultants provide personalized advice to address your unique challenges. Additionally, our training programs empower your team with valuable skills and knowledge, ensuring that your business remains competitive and adaptable in a rapidly evolving digital landscape.' }
+  ];
+
+  
+  const handleServiceClick = (serviceId) => {
+    setSelectedService(serviceId);
+      
+    const serviceImgContainer = document.querySelector('.service-img-container');
+    const serviceDescription = document.querySelector('.service-Description');
+
+    // Apply fade-out effect to image and description
+    serviceImgContainer.style.opacity = 0;
+    serviceDescription.style.opacity = 0;
+    serviceDescription.style.transform = 'translateY(-30px)';
+    serviceImgContainer.style.transform = 'translateY(30px)';
+
+    // Delay the state update to allow the fade-out effect to take place
+    setTimeout(() => {
+      // Apply fade-in effect to image and description
+      serviceImgContainer.style.opacity = 1;
+      serviceImgContainer.style.transform = 'translateY(0)';
+      serviceDescription.style.opacity = 1;
+      serviceDescription.style.transform = 'translateY(0)';
+    }, 500); // The same duration as the transition in CSS
+    
+    
+  };
 
   let width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
 
@@ -282,27 +328,46 @@ function App() {
           </div>
           <div className="container" style={{paddingTop: "120px", paddingBottom: "120px"}}>
             <div className='row'>
-            <h1 className="text-center"  style={{marginTop: '-5%', color: "#fff", fontWeight: "600", fontSize: "48px"}}>What We Offer</h1>
-            <br/>
-            <br/>
-              <div className='col-lg-6' style={{paddingTop: "20px"}}>
+              <h1 className="text-center"  style={{marginTop: '-5%', color: "#fff", fontWeight: "600", fontSize: "48px"}}>What We Offer</h1>
+              <br/>
+              <br/>
+              <div className='col-lg-6' style={{ paddingTop: "20px" }}>
                 <div className='service-container'>
-                  <div className='service-img'>
-
-                  </div>
+                {selectedService !== null ? (
+                    <div className='service-img-container d-flex justify-content-center' style={{width: "100%"}}>
+                      <img className='img-fluid service-img' style={{}} src={serviceList.find(service => service.id === selectedService)?.image} alt={serviceList.find(service => service.id === selectedService)?.name} />
+                    </div>
+                  ) : (
+                    <div className='service-img-container d-flex justify-content-center' style={{width: "100%"}}>
+                     <img className='img-fluid service-img' style={{}} src={serviceList.find(service => service.id === 2)?.image} alt={serviceList.find(service => service.id === selectedService)?.name} />
+                    </div>
+                  )}
                   <div className='service-Description'>
-
+                    {selectedService !== null ? (
+                      <>
+                        <br/>
+                        <h3>{serviceList.find(service => service.id === selectedService)?.heading}</h3>
+                        <br/>
+                        <p>{serviceList.find(service => service.id === selectedService)?.description}</p>
+                        <br/>
+                        <a href={serviceList.find(service => service.id === selectedService)?.url} className='hero-call-to-action service-learn-more'>Learn More<FaArrowRight style={{ marginLeft: '5px' }} /></a>
+                      </>
+                    ) : (
+                      <p>{serviceList.find(service => service.name === 'UX/UI')?.description}</p>
+                    )}
                   </div>
                 </div>
               </div>
               <div className='col-lg-6'>
-                <div className="services-list" style={{paddingLeft: "30px", paddingRight: "30px", marginTop: "20px"}}>
+                <div className="services-list" style={{ paddingLeft: "30px", paddingRight: "30px", marginTop: "20px" }}>
                   <ul>
-                    <a href='#'><li style={{paddingTop: '20px'}}><FaBullseye /> &nbsp; Digital Marketing</li></a>
-                    <a href='#'><li style={{paddingTop: '20px'}}><FaPalette /> &nbsp; Web Design</li></a>
-                    <a href='#'><li style={{paddingTop: '20px'}}><FaCode /> &nbsp; Development</li></a>
-                    <a href='#'><li style={{paddingTop: '20px'}}><FaCube /> &nbsp; Product Design</li></a>
-                    <a href='#'><li style={{paddingTop: '20px'}}><FaPaintBrush /> &nbsp; Illustration</li></a>
+                    {serviceList.map(service => (
+                      <li key={service.id} style={{ paddingTop: '20px' }}>
+                        <a href='#' onClick={() => handleServiceClick(service.id)}>
+                          {service.name}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -314,7 +379,7 @@ function App() {
                 <h1 className='text-center' style={{color: "#E01265", fontWeight: "600", fontSize: "48px"}}>Our Values</h1>
                 <br/>
                 <p className='text-center' style={{fontSize: "26px"}}>
-                  Plus agency provides digital marketing solutions based on these three<br/> pillars passion, integrity, Data-driven.
+                  Plus agency provides digital solutions based on these three<br/> pillars passion, integrity, Data-driven.
                 </p>
               </div>
             </div>
@@ -348,9 +413,9 @@ function App() {
               <h1 className="text-start" style={{fontSize: "48px", fontWeight: "600", margin: "3% 50px"}}>Projects</h1>
               <hr/>
               <section className="Projects-section" style={{width: '100vw'}}>
-                  <div class="container">
+                <div class="container">
                     <div class="item" id="1">
-                      <img className='img-fluid' src="https://images.unsplash.com/photo-1508124780861-b1687f9a13e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f841d43a63c085e930aa5b6b33e89a9f&auto=format&fit=crop&w=1385&q=80" alt=""/>
+                      <img className='img-fluid project-img' src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" alt=""/>
                       <div class="text">
                         <h3>Bitskill</h3>
                         <p>A Blockchain based certificate issuance system.</p>
@@ -359,7 +424,7 @@ function App() {
                     </div>
 
                     <div class="item" id="2">
-                      <img className='img-fluid' src="https://images.unsplash.com/photo-1496492352121-593138d42a61?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3542849cc0459345e3aa82a90ae51a01&auto=format&fit=crop&w=1350&q=80" alt=""/>
+                      <img className='img-fluid project-img' src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt=""/>
                       <div class="text">
                         <h3>AkibaPlus</h3>
                         <p>A product enabling users combine pensions to Sanlam Insurance.</p>
@@ -368,16 +433,16 @@ function App() {
                     </div>
 
                     <div class="item" id="3">
-                      <img className='img-fluid' src="https://images.unsplash.com/photo-1515215676803-119c88d493cf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=baf00747bfb9fe41ad9af8cf00dbebbf&auto=format&fit=crop&w=1350&q=80" alt=""/>
+                      <img className='img-fluid project-img' src="https://images.unsplash.com/photo-1534476478164-b15fec4f091c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt=""/>
                       <div class="text">
                           <h3>Bountiful</h3>
-                        <p>Bountiful Safaris products Website</p>
+                        <p>Bountiful Safaris is a Travel and Tours company.</p>
                         </div>
                         <div class="learn-button">View On Github</div>
                     </div>
 
                     <div class="item" id="4">
-                      <img className='img-fluid' src="https://images.unsplash.com/photo-1496939217462-7d42e9a74f0e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5e3be993a88feed38e4f5374ff3ba115&auto=format&fit=crop&w=1350&q=80g" alt=""/>
+                      <img className='img-fluid project-img' src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt=""/>
                       <div class="text">
                         <h3>Imaginarium</h3>
                         <p>An ecommerce platform dealing with IT products and solutions.</p>
@@ -386,19 +451,19 @@ function App() {
                     </div>
 
                     <div class="item" id="5">
-                      <img className='img-fluid' src="https://images.unsplash.com/photo-1504875427817-937a8a12e167?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd7f399ba43093ead08e7dbf5e083f09&auto=format&fit=crop&w=1434&q=80" alt=""/>
+                      <img className='img-fluid project-img' src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80" alt=""/>
                       <div class="text">
                         <h3>SCFF</h3>
                         <p>A recruiting agency</p>
                       </div>
-                      <div class="learn-button">Learn More</div>
+                      <div class="learn-button">View on Github</div>
                     </div>
 
                     <div class="item" id="6">
-                      <img className='img-fluid' src="https://images.unsplash.com/photo-1493962853295-0fd70327578a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f758b0379f730e73c03b6153aaad7cf1&auto=format&fit=crop&w=1350&q=80" alt=""/>
+                      <img className='img-fluid project-img' src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1005&q=80" alt=""/>
                       <div class="text">
-                        <h3>Brandlog</h3>
-                        <p>A gifting company</p>
+                        <h3>Dobiri</h3>
+                        <p>All in one Students Store</p>
                       </div>
                       <div class="learn-button">View on Github</div>
                     </div>
@@ -427,7 +492,8 @@ function App() {
                 <textarea type="text" class="form-control" id="message" placeholder="Type here..."/>
               </div>
               <br/>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <br/>
+              <button type="submit" style={{width: "100%"}} class="contact-btn">Submit</button>
             </form>
           </div>
 
