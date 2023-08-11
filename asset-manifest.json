@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Plus/static/css/main.e80a16da.css",
+    "main.js": "/Plus/static/js/main.8f62c1b4.js",
+    "static/js/787.5e606d4b.chunk.js": "/Plus/static/js/787.5e606d4b.chunk.js",
+    "static/media/contactUs-img.jpg": "/Plus/static/media/contactUs-img.50c1c7dd2dcf2ddc8088.jpg",
+    "static/media/img1.png": "/Plus/static/media/img1.502b49d6eebe3e7bca45.png",
+    "static/media/illustration.png": "/Plus/static/media/illustration.36780999675c7354741e.png",
+    "static/media/about-hero-img.png": "/Plus/static/media/about-hero-img.eee07ef54a73f78603e9.png",
+    "static/media/digitalmarketing.png": "/Plus/static/media/digitalmarketing.7be0062722004e59cae3.png",
+    "static/media/SEO.png": "/Plus/static/media/SEO.39ed1422f4697bd743b6.png",
+    "static/media/Development.png": "/Plus/static/media/Development.ff56b2e61d0c7230bb59.png",
+    "static/media/graphic.png": "/Plus/static/media/graphic.071463c3a97bf2f37168.png",
+    "static/media/video.png": "/Plus/static/media/video.04d4dc5b1ef4f3e8fe32.png",
+    "static/media/uxui.png": "/Plus/static/media/uxui.e835b740acc9da137bea.png",
+    "static/media/Consultation.png": "/Plus/static/media/Consultation.2c0be8f14739267224cf.png",
+    "index.html": "/Plus/index.html",
+    "main.e80a16da.css.map": "/Plus/static/css/main.e80a16da.css.map",
+    "main.8f62c1b4.js.map": "/Plus/static/js/main.8f62c1b4.js.map",
+    "787.5e606d4b.chunk.js.map": "/Plus/static/js/787.5e606d4b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e80a16da.css",
+    "static/js/main.8f62c1b4.js"
+  ]
+}
