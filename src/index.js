@@ -6,30 +6,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import reportWebVitals from './reportWebVitals';
 import { Canvas } from '@react-three/fiber';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navigation from'./Components/Navbar/navbar';
-import About from './Components/AboutUs/about';
-import Blogs from './Components/Blogs/blogs';
-import Projects from './Components/Projects/projects';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
         <Canvas>
-          <Router>
-            <Routes>
-              <Route exact path='/' element={<App />} />
-            </Routes>
-            <Routes>
-              <Route exact path='/About' element={<About />} />
-            </Routes>
-            <Routes>
-              <Route exact path='/Blogs' element={<Blogs />} />
-            </Routes>
-            <Routes>
-              <Route exact path='/Projects' element={<Projects />} />
-            </Routes>
-          </Router>
+          <App/>
         </Canvas>
   </React.StrictMode>
 );

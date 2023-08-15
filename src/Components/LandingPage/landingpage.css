@@ -1,0 +1,10 @@
+.hero-header{
+    font-size: 116px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 990px) {
+    div .hero-header{
+        font-size: 56px;
+    }
+}

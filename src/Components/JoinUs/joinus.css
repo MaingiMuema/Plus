@@ -1,0 +1,88 @@
+.hero-left-container{
+    background-color: #ff5252;
+    padding: 50px;
+    width: 100%;
+    border-radius: 60%;
+}
+
+.hero-left-container img{
+    border-radius: 60%;
+    margin-top: -90px;
+}
+
+.join-us-heading h2{
+    font-size: 36px;
+    font-weight: 700;
+    color: #ff5252;
+}
+
+.join-us-description{
+    font-size: 18px;
+    font-family: "Oswald", sans-serif;
+    padding: 0px 100px 20px 100px;
+}
+
+@media screen and (max-width: 990px){
+    div .join-us-description{
+        font-size: 18px;
+        font-family: "Oswald", sans-serif;
+        padding: 0px 10px 20px 10px;
+    }
+
+    div .job-section{
+        padding: 10px;
+    }
+}
+
+.collapse-btn{
+    padding: 3px 12px 3px 12px;
+    border-radius: 40px;
+    margin: 20px;
+    font-family: "Oswald", sans-serif;
+    outline: none;
+    border: 1px solid #ff5252;
+    color: #ff5252;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.collapse-btn:hover{
+    padding: 3px 12px 3px 12px;
+    border-radius: 40px;
+    margin: 20px;
+    font-family: "Oswald", sans-serif;
+    outline: none;
+    color: #fff;
+    border: 1px solid #ff5252;
+    background-color: #ff5252;
+}
+
+.jobs-container div .card{
+    padding: 30px 20px 30px 20px;
+    background-color: #ffffff36;
+    color: #fff;
+    font-family: "Oswald", sans-serif;
+    border: 1px solid #ff5252;
+    border-radius: 15px;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: pointer;
+}
+
+.jobs-container div .card:hover{
+    padding: 30px 20px 30px 20px;
+    background-color: #ff5252;
+    color: #fff;
+    font-family: "Oswald", sans-serif;
+    border: 1px solid #fff;
+}
+
+.jobs-container{
+    padding: 60px 20px 60px 20px;
+}
+
+.job-section{
+    padding: 50px;
+}
+
+.job-container{
+    margin: 10px;
+}
